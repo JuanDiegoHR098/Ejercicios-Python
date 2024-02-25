@@ -196,7 +196,7 @@ while True:
             print("Paciente no encontrado")
         else:
             for paciente_encontrado in pacientes_encontrados:
-                print("Nombre: {}, Cedula: {}, Genero: {}, Servicio: {}".format(
+                print(( "Nombre: {}, Cedula: {}, Genero: {}, Servicio: {}").format(
                     *paciente_encontrado))
 
     elif entrada == 3:
