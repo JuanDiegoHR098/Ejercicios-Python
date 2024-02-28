@@ -107,7 +107,7 @@ while True:
 
         try:
 
-            if len(sis.lista_mascotas) < 2:
+            if len(sis.lista_mascotas) < 10:
 
                 num_historia= int(input("Ingrese el numero de historia:"))
                 f= sis.Verificar_existente(num_historia)
