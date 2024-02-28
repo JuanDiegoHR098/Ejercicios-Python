@@ -105,27 +105,36 @@ while True:
 
     if entrada==1:
 
-        num_historia= int(input("Ingrese el numero de historia:"))
-        f= sis.Verificar_existente(num_historia)
-        if f == True:
-            print("¡Ya existe una mascota registrada con ese numero de historia!")
-        else:
-            
-        
-            nombre= input("Ingrese el nombre de la mascota:") 
-            tipo=input("Que tipo de mascota es (Canino/Felino):")
-            peso= int(input("Ingrese el peso de la mascota:"))
-            fecha_ingreso= input("Ingrese la fecha de ingreso:")
-            medicamento= input("Medicamento suministrado:")
+        try:
 
-            mascota= Mascota()
-            mascota.asignar_nombre(nombre)
-            mascota.asignar_num_historia(num_historia)
-            mascota.asignar_tipo(tipo)
-            mascota.asignar_peso(peso)
-            mascota.asignar_fecha_ingreso(fecha_ingreso)
-            mascota.asignar_medicamento(medicamento)
-            sis.ingresar_mascota(mascota)
+            if len(sis.lista_mascotas) < 2:
+
+                num_historia= int(input("Ingrese el numero de historia:"))
+                f= sis.Verificar_existente(num_historia)
+                if f == True:
+                    print("¡Ya existe una mascota registrada con ese numero de historia!")
+                else:
+                    
+                
+                    nombre= input("Ingrese el nombre de la mascota:") 
+                    tipo=input("Que tipo de mascota es (Canino/Felino):")
+                    peso= int(input("Ingrese el peso de la mascota:"))
+                    fecha_ingreso= input("Ingrese la fecha de ingreso:")
+                    medicamento= input("Medicamento suministrado:")
+
+                    mascota= Mascota()
+                    mascota.asignar_nombre(nombre)
+                    mascota.asignar_num_historia(num_historia)
+                    mascota.asignar_tipo(tipo)
+                    mascota.asignar_peso(peso)
+                    mascota.asignar_fecha_ingreso(fecha_ingreso)
+                    mascota.asignar_medicamento(medicamento)
+                    sis.ingresar_mascota(mascota)
+                
+            else:
+                print("¡Capacidad de mascotas registradas excedida, solo se permiten 10 mascotas")
+        except ValueError:
+            print("Ingrese un valor valido")
 
     if entrada==2:
         fecha= input("Ingrese el nombre de la mascota:")
